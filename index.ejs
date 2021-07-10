@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Auth demo
+        </title>
+    </head>
+    <body>
+        <% if (user){ %>
+            <h1>
+                Welcome back <%= user.username %>
+            </h1>
+            <a href="/log-out">Log out</a>
+        <%} else { %>
+            <h1>
+                please log in
+            </h1>
+
+            <form action="/log-in" method="POST">
+                <label for="username">
+                    Username
+                </label>
+                <input name="username" placeholder="username" type="text" />
+
+                <label for="password">
+                    Password
+                </label>
+                <input name="password" type="password" />
+
+                <button>
+                    Log in
+                </button>
+            </form>
+
+            <br>
+
+            <a href="/sign-up">Sign up form</a>
+        <%}%>
+    </body>
+</html>
