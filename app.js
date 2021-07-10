@@ -8,8 +8,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs')
 
-// const mongoDb = "mongodb+srv://dbUser:dbPassword@cluster0.s17ir.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-// mongoose.connect(mongoDb, {useUnifiedTopology: true, useNewURLParser: true})
 mongoose.connect(process.env.DB_HOST, {useUnifiedTopology: true, useNewURLParser: true})
 const db = mongoose.connection
 db.on('error', console.error.bind(console, "mongo connection error"))
